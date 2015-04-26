@@ -7,7 +7,9 @@
 	<link rel="stylesheet" href="jquery.mobile-1.4.5.css">
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-	
+	<script src="cordova.js"></script>
+	<script src="barcodescanner.js"></script>
+	<script src="js/scanner.js"></script>
 </head>
 <body>
 	<div data-role="page" id="homePage">
@@ -18,6 +20,9 @@
 			<p>
 			Welcome to our first mobile web site.  It's going to be the best sit you're ever seen.
 			Once we get some content.  And a business plan.  But the hard part is done!
+			</p>
+			<p>
+				<a href="#" id="scan">SCAN</a>
 			</p>
 			<p>
 			Find our about our wonderful <a href="products.html" data-prefetch="true" data-transition="pop" data-direction="reverse">products</a>
@@ -44,5 +49,10 @@
 			<h4>Copyright SAG&copy; 2015</h4>
 		</div>
 	</div><!-- /page -->
+	<script type="text/javascript">
+		app.initialize();
+	</script>
+	
+	
 </body>
 </html>
