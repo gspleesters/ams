@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>First Mobile Example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+	
+</head>
+<body>
+	<div data-role="page" id="homePage">
+		<div data-role="header" data-position="fixed" >
+			<h1> Welcome</h1>			
+		</div>
+		<div data-role="content">
+			<p>
+			Welcome to our first mobile web site.  It's going to be the best sit you're ever seen.
+			Once we get some content.  And a business plan.  But the hard part is done!
+			</p>
+			<p>
+			Find our about our wonderful <a href="products.html" data-prefetch="true" data-transition="pop" data-direction="reverse">products</a>
+			</p>
+			<p>
+			You can also <a href="#aboutPage">learn more</a> about SAG
+			</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h4>Copyright SAG&copy; 2015</h4>
+		</div>
+	</div><!-- /page -->
+	<div data-role="page" id="aboutPage" data-title="All about SAG">
+		<div data-role="header" data-position="fixed">
+			<h1>About SAG</h1>
+		</div>
+		<div data-role="content">
+			<p>
+				This text talks about SAG and how interesting it is.  Most likely though you want to
+				<a href="#homePage">return</a> to the home page.
+			</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h4>Copyright SAG&copy; 2015</h4>
+		</div>
+	</div><!-- /page -->
+</body>
+</html>
