@@ -58,8 +58,8 @@ var app = {
             */
             
             if (result.format == "QR_CODE") {
-            	 alert("QR CODE = " + result.text + "\n" );  
-            	//window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });               
+            	 //alert("QR CODE = " + result.text + "\n" );  
+            	 window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });               
             }else{
             	alert("Wrong format " + result.format);
             }
