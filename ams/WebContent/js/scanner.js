@@ -42,10 +42,12 @@ var app = {
 
         scanner.scan( function (result) { 
 
+        	/*
             alert("We got a barcode\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled);  
+            "Cancelled: " + result.cancelled);
+*/ 
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
@@ -55,7 +57,9 @@ var app = {
             console.log(result);
             
             if (result.format == "QR_CODE") {
-                window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });
+            	 alert("QR CODE = " + result.text + "\n" );  
+            	//window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });
+                
             }
             
 
