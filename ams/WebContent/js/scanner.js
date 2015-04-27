@@ -48,13 +48,14 @@ var app = {
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);
 
-
+           /* 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
             console.log(result);
+            */
             
             if (result.format == "QR_CODE") {
             	 alert("QR CODE = " + result.text + "\n" );  
