@@ -12,7 +12,8 @@ var app = {
     // `load`, `deviceready`, `offline`, and `online`.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.getElementById('scan').addEventListener('click', this.scan, false);      
+        document.getElementById('scan').addEventListener('click', this.scan, false); 
+        document.getElementById('test').addEventListener('click', this.test, false);
     },
 
     // deviceready Event Handler
@@ -35,6 +36,38 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
+    
+    test: function(){
+    	//window.open('http://www.google.com','GoogleWindow','width=800, height=600');
+    	//window.location.href = 'https://locadream.ec-is.be';
+    	//$.get("https://assist.ec-is.be/en/webservice/gateway/get",{username:"A0EBA1A55A2A225C9D13",password:"A239E5B3F4B3A63EB030",template:"OBU_GATEWAY",properties:{key:"imei",value:"861001000032264"}},function(data){},"json");
+    	
+    	$.post("storeEvent",{"link":"https://locadream.ec-is.be/en/public/locator/index/type/asset/template/auto/id/1732/"},function(data){},"json");
+    	
+    	/*
+    	$.ajax({
+    	    type: 'POST',
+    	    url: 'https://assist.ec-is.be/en/webservice/route/getall',
+    	    //crossDomain: true,
+    	    //data:'{"username":"A0EBA1A55A2A225C9D13","password":"A239E5B3F4B3A63EB030"}',
+    	    data: '{"username":"A0EBA1A55A2A225C9D13","password":"A239E5B3F4B3A63EB030"}',
+    	    dataType: 'json',  	    
+    	    success: function(responseData, textStatus, jqXHR) {
+    	        var value = responseData.someKey;
+    	    },
+    	    error: function (responseData, textStatus, errorThrown) {
+    	        alert('POST failed.');
+    	    }
+    	}); 
+    	*/
+    		
+    	
+    },
+    
+    callbackname: function(json){
+    	
+    },
+    
     scan: function() {
         console.log('scanning');
         
@@ -42,12 +75,13 @@ var app = {
 
         scanner.scan( function (result) { 
 
-        	
+        	/*
             alert("We got a barcode\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);
-
+			*/
+        	
            /* 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
@@ -58,8 +92,8 @@ var app = {
             */
             
             if (result.format == "QR_CODE") {
-            	 //alert("QR CODE = " + result.text + "\n" );  
-            	 window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });               
+            	 //alert("QR CODE = " + result.text + "\n" ); 
+            	$.post("storeEvent",{"link":result.text},function(data){},"json");
             }else{
             	alert("Wrong format " + result.format);
             }
