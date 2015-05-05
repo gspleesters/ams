@@ -42,24 +42,25 @@ var app = {
     	//window.location.href = 'https://locadream.ec-is.be';
     	//$.get("https://assist.ec-is.be/en/webservice/gateway/get",{username:"A0EBA1A55A2A225C9D13",password:"A239E5B3F4B3A63EB030",template:"OBU_GATEWAY",properties:{key:"imei",value:"861001000032264"}},function(data){},"json");
     	
-    	$.post("storeEvent",{"link":"https://locadream.ec-is.be/en/public/locator/index/type/asset/template/auto/id/1732/"},function(data){},"json");
+    	//$.post("storeEvent",{"link":"https://locadream.ec-is.be/en/public/locator/index/type/asset/template/auto/id/1732/"},function(data){},"json");
     	
-    	/*
+    	
     	$.ajax({
     	    type: 'POST',
-    	    url: 'https://assist.ec-is.be/en/webservice/route/getall',
+    	    url: 'https://locadream.ec-is.be/en/webservice/asset/get',
     	    //crossDomain: true,
     	    //data:'{"username":"A0EBA1A55A2A225C9D13","password":"A239E5B3F4B3A63EB030"}',
-    	    data: '{"username":"A0EBA1A55A2A225C9D13","password":"A239E5B3F4B3A63EB030"}',
+    	    data: '{"username":"A0EBA1A55A2A225C9D13","password":"A239E5B3F4B3A63EB030","asset_id":"1732"}',
     	    dataType: 'json',  	    
     	    success: function(responseData, textStatus, jqXHR) {
     	        var value = responseData.someKey;
+    	        alert(responseData.status);
     	    },
     	    error: function (responseData, textStatus, errorThrown) {
     	        alert('POST failed.');
     	    }
     	}); 
-    	*/
+    	
     		
     	
     },
@@ -92,7 +93,7 @@ var app = {
             */
             
             if (result.format == "QR_CODE") {
-            	 //alert("QR CODE = " + result.text + "\n" ); 
+            	alert("QR CODE = " + result.text + "\n" ); 
             	$.post("storeEvent",{"link":result.text},function(data){},"json");
             }else{
             	alert("Wrong format " + result.format);
