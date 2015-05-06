@@ -15,7 +15,14 @@ $(document).ready(function ()
 	
 	 //$('.car').maphilight();
 	
-	$('#map_id').on('click', function () {alert("AREA CLICKED" );   });
+	//$('#map_id').on('click', function () {alert("AREA CLICKED" );   });
 	//$('#map_img').on('click')
 	
+	
+	
+	
 });
+
+function myFunction(){
+	alert("TEST");
+}
