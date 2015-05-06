@@ -13,8 +13,9 @@ $(document).ready(function ()
 	});
 	*/
 	
-	 $('.car').maphilight();
+	 //$('.car').maphilight();
 	
-	//$('#map_id').on('click', function () {alert("AREA CLICKED" );   });
+	$('#map_id').on('click', function () {alert("AREA CLICKED" );   });
+	//$('#map_img').on('click')
 	
 });
