@@ -13,6 +13,8 @@ $(document).ready(function ()
 	});
 	*/
 	
-	$('#map_id').on('click', function () {alert("AREA CLICKED" );   });
+	 $('.car').maphilight();
+	
+	//$('#map_id').on('click', function () {alert("AREA CLICKED" );   });
 	
 });
